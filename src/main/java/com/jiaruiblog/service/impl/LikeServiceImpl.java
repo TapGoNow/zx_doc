@@ -98,6 +98,7 @@ public class LikeServiceImpl implements LikeService {
     public List<UserLikeDetail> getLikedDataFromRedis() {
         ArrayList<UserLikeDetail> result = new ArrayList<>();
         Set<String> setKeys = redisTemplate.keys("like:entity:*");
+
         if (CollectionUtils.isEmpty(setKeys)) {
             return result;
         }
